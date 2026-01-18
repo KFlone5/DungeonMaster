@@ -16,9 +16,18 @@ body {
     box-sizing: border-box;
 }
 
-.hello {
+.hello-text {
     font-family: "Times New Roman", Times, serif;
-    font-size: 3.5rem;             /* лучше использовать rem */
+    font-size: 48px;             /* лучше использовать rem */
+    font-weight: bold;
+    color: #97afa4;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(151, 175, 164, 0.4);
+}
+
+.description-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;             /* лучше использовать rem */
     font-weight: bold;
     color: #97afa4;
     margin: 0;
