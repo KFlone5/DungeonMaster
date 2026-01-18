@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!-- ← важно! -->
     <title>Kronos</title>
 </head>
 <body>
@@ -16,43 +15,9 @@
         <p class="description-text">
             This Telegram Mini App is currently under development.
         </p>
-        
-        <!-- Добавляем кнопку для демонстрации связи -->
-        <button id="send-to-bot" class="send-button">Отправить сигнал боту</button>
-        
         <div class="billy-container">
-            <img src="images/billy_herrington.png" alt="Billy">
+            <img src="images/billy_herrington.png" alt="">
         </div>        
     </div>
-
-    <script>
-        // Инициализация Telegram Web App
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        tg.expand(); // растягиваем на весь экран (опционально)
-
-        // Обработчик кнопки
-        document.getElementById("send-to-bot").addEventListener("click", function() {
-            // Можно отправлять строку или JSON
-            const data = {
-                action: "hello_from_miniapp",
-                time: new Date().toISOString(),
-                message: "Привет из Kronos!"
-            };
-            
-            tg.sendData(JSON.stringify(data));  // ← отправляем данные боту!
-            
-            // Показываем уведомление внутри Mini App
-            tg.showAlert("Сигнал отправлен боту! Проверь чат.");
-            
-            // Опционально: можно сразу закрыть Mini App
-            // tg.close();
-        });
-
-        // Защита: если не в Telegram — показываем предупреждение
-        if (!tg.initData) {
-            document.body.innerHTML = "<h1 style='color:white; text-align:center; padding:50px;'>Это приложение работает только внутри Telegram!</h1>";
-        }
-    </script>
 </body>
 </html>
